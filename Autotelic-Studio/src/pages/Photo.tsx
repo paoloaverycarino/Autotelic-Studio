@@ -2,27 +2,45 @@ import React, { useState } from 'react';
 
 const PhotoPage: React.FC = () => {
   const photos = [
-    { id: '1', imageSrc: '/images/easy.jpg', title: 'Ephemeral Light', category: 'Portraits', date: '2023-01-15' },
-    { id: '2', imageSrc: '/images/easy.jpg', title: 'Green Serenity', category: 'Fashion', date: '2023-02-20' },
-    { id: '3', imageSrc: '/images/easy.jpg', title: 'Golden Hour', category: 'Abstract', date: '2023-03-10' },
-    { id: '4', imageSrc: '/images/easy.jpg', title: 'Behind the Scenes', category: 'BTS', date: '2023-04-05' },
-    { id: '5', imageSrc: '/images/easy.jpg', title: 'Crimson Bloom', category: 'Creative', date: '2023-05-22' },
-    { id: '6', imageSrc: '/images/easy.jpg', title: 'Reflections', category: 'Film', date: '2023-06-18' },
-    { id: '7', imageSrc: '/images/easy.jpg', title: '1', category: '1', date: '2023-07-30' },
-    { id: '8', imageSrc: '/images/easy.jpg', title: '2', category: '2', date: '2023-08-11' },
-    { id: '9', imageSrc: '/images/easy.jpg', title: '3', category: 'Fil3m', date: '2023-09-01' },
-    { id: '10', imageSrc: '/images/easy.jpg', title: '3', category: 'Fil3m', date: '2023-10-14' },
-    { id: '11', imageSrc: '/images/easy.jpg', title: '3', category: 'Fil3m', date: '2023-11-25' },
-    { id: '12', imageSrc: '/images/easy.jpg', title: '3', category: 'Fil3m', date: '2023-12-31' },
+    { id: '1', imageSrc: '/images/breanna.jpeg', title: 'breanna' },
+    { id: '2', imageSrc: '/images/eli.jpg', title: 'eli' },
+    { id: '3', imageSrc: '/images/movie.jpg', title: 'movie' },
+    { id: '4', imageSrc: '/images/glass2.jpg', title: 'glass2' },
+    { id: '5', imageSrc: '/images/sarah2.jpg', title: 'sarah2' },
+    { id: '6', imageSrc: '/images/mockup3.jpg', title: 'mockup3' },
+    { id: '7', imageSrc: '/images/fire.jpg', title: 'fire' },
+    { id: '8', imageSrc: '/images/erika.jpg', title: 'erika' },
+    { id: '9', imageSrc: '/images/vogue.jpeg', title: 'vogue' },
+    { id: '10', imageSrc: '/images/glow.jpg', title: 'glow' },
+    { id: '11', imageSrc: '/images/mockup.jpg', title: 'mockup' },
+    { id: '12', imageSrc: '/images/andy.jpg', title: 'andy' },
+    { id: '13', imageSrc: '/images/eli2.jpg', title: 'eli2' },
+    { id: '14', imageSrc: '/images/ricebowl.jpg', title: 'ricebowl' },
+    { id: '15', imageSrc: '/images/glass.jpg', title: 'glass' },
+    { id: '16', imageSrc: '/images/mockup4.jpg', title: 'mockup4' },
+    { id: '17', imageSrc: '/images/candid.jpg', title: 'candid' },
+    { id: '18', imageSrc: '/images/kate.jpg', title: 'kate' },
+    { id: '19', imageSrc: '/images/polaroid.jpg', title: 'polaroid' },
+    { id: '20', imageSrc: '/images/abkd.jpg', title: 'abkd' },
+    { id: '21', imageSrc: '/images/ski.jpg', title: 'ski' },
+    { id: '22', imageSrc: '/images/daniel.jpg', title: 'daniel' },
+    { id: '23', imageSrc: '/images/mirror.jpg', title: 'mirror' },
+    { id: '24', imageSrc: '/images/bano.jpeg', title: 'bano' },
+    { id: '25', imageSrc: '/images/mockup2.jpg', title: 'mockup2' },
+    { id: '26', imageSrc: '/images/ate.jpg', title: 'ate' },
+    { id: '27', imageSrc: '/images/vogue2.jpg', title: 'vogue2' },
+    { id: '28', imageSrc: '/images/emily.jpg', title: 'emily' },
+    { id: '29', imageSrc: '/images/poster.jpg', title: 'poster' },
+    { id: '30', imageSrc: '/images/jae.jpeg', title: 'jae' },
+    { id: '31', imageSrc: '/images/aileen.jpg', title: 'aileen' },
+    { id: '32', imageSrc: '/images/head.jpg', title: 'head' },
   ];
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalImage, setModalImage] = useState('');
-  const [modalDate, setModalDate] = useState<string | undefined>('');
 
-  const openModal = (src: string, date?: string) => {
+  const openModal = (src: string) => {
     setModalImage(src);
-    setModalDate(date);
     setIsModalOpen(true);
   };
 
@@ -36,7 +54,7 @@ const PhotoPage: React.FC = () => {
     }
   };
 
-  const columnOffsets = ['0', '5rem']; // Offset for every other column
+  const columnOffsets = ['0', '3rem']; // Reduced offset for every other column
 
   return (
     <div className="min-h-screen bg-black text-white pt-10 pb-20 px-4 sm:px-8">
@@ -65,7 +83,7 @@ const PhotoPage: React.FC = () => {
                   src={photo.imageSrc}
                   alt={photo.title || ''}
                   className="absolute top-0 left-0 w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer"
-                  onClick={() => openModal(photo.imageSrc, photo.date)}
+                  onClick={() => openModal(photo.imageSrc)}
                 />
               </div>
             );
@@ -85,19 +103,6 @@ const PhotoPage: React.FC = () => {
               alt="Enlarged"
               className="max-w-full max-h-[80vh] object-contain rounded-lg"
             />
-            <button
-              className="absolute top-2 right-2 text-white bg-black bg-opacity-50 hover:bg-opacity-75 rounded-full p-2"
-              onClick={closeModal}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            {modalDate && (
-              <div className="text-center text-white text-lg mt-4 font-NeueMontreal">
-                {modalDate}
-              </div>
-            )}
           </div>
         </div>
       )}
