@@ -61,13 +61,14 @@ const PhotoPage: React.FC = () => {
       {/* Spacing div */}
       <div className="h-10"></div>
       <header className="text-center mb-12">
-        <h1 className="text-5xl font-bold font-NeueMontreal tracking-tight">Photography</h1>
+        <h1 className="text-8xl font-bold font-NeueMontreal tracking-tight">Photography</h1>
+        <br></br>
         <p className="text-lg pt-10 text-gray-400 mt-2">A moment of time captured in and preserved forever.</p>
       </header>
       {/* Spacing div */}
       <div className="h-10"></div>
       <main>
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-6 gap-8">
           {photos.map((photo, index) => {
             const offset = columnOffsets[index % 2];
             return (
@@ -82,7 +83,7 @@ const PhotoPage: React.FC = () => {
                 <img
                   src={photo.imageSrc}
                   alt={photo.title || ''}
-                  className="absolute top-0 left-0 w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer"
+                  className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer"
                   onClick={() => openModal(photo.imageSrc)}
                 />
               </div>
