@@ -1,6 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
-import Plyr from 'plyr-react';
-import 'plyr-react/plyr.css';
+import React, { useRef, useState } from 'react';
 import './styles/shortform-player.css';
 
 interface ShortformProps {
@@ -39,36 +37,6 @@ const Shortform: React.FC<ShortformProps> = ({
       previewRef.current?.pause();
       if (previewRef.current) previewRef.current.currentTime = 0;
     }
-  };
-
-  const videoSource = {
-    type: 'video' as const,
-    sources: [
-      {
-        src: videoSrc,
-        type: 'video/mp4',
-      },
-    ],
-  };
-
-  console.log('Video source:', videoSource);
-
-  const plyrOptions = {
-    autoplay: true,
-    loop: { active: true },
-    muted: true,
-    controls: [
-      'play-large',
-      'play',
-      'progress',
-      'current-time',
-      'duration',
-      'mute',
-      'volume',
-      'fullscreen'
-    ],
-    clickToPlay: true,
-    hideControls: false,
   };
 
   return (
