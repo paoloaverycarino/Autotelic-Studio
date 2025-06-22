@@ -1,0 +1,155 @@
+/* Custom Plyr Styles for Shortform Videos */
+
+/* Main player container */
+.plyr--video {
+  background: #000000;
+  border-radius: 1rem;
+  overflow: hidden;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Video element */
+.plyr__video-wrapper {
+  background: #000000;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.plyr__video-wrapper video {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+/* Control bar */
+.plyr__controls {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 1rem;
+  border-radius: 0 0 1rem 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Progress bar */
+.plyr__progress {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 0.25rem;
+  height: 0.25rem;
+  margin: 0 0.5rem;
+}
+
+.plyr__progress__played {
+  background: #ffffff;
+}
+
+.plyr__progress__buffer {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Control buttons */
+.plyr__control {
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.plyr__control:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Play button overlay (big centered button) */
+.plyr__control--overlaid {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 4rem !important;
+  height: 4rem !important;
+  min-width: 4rem !important;
+  min-height: 4rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  color: #000000 !important;
+}
+
+/* Play icon inside overlay */
+.plyr__control--overlaid .plyr__icon {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  flex-shrink: 0 !important;
+  color: #000000 !important;
+}
+
+/* Volume control */
+.plyr__volume {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+.plyr__volume__display {
+  background: #ffffff;
+}
+
+/* Time display */
+.plyr__time {
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Fullscreen button */
+.plyr__control[data-plyr="fullscreen"] {
+  color: #ffffff;
+}
+
+/* Loading spinner */
+.plyr__loading {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.plyr__loading__spinner {
+  border: 2px solid #ffffff;
+  border-top: 2px solid transparent;
+}
+
+/* Tooltips */
+.plyr__tooltip {
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid #333333;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  padding: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .plyr__controls {
+    padding: 0.75rem;
+  }
+
+  .plyr__control {
+    padding: 0.375rem;
+  }
+
+  .plyr__control--overlaid {
+    width: 3rem !important;
+    height: 3rem !important;
+    min-width: 3rem !important;
+    min-height: 3rem !important;
+  }
+
+  .plyr__control--overlaid .plyr__icon {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
+} 

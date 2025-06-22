@@ -1,0 +1,131 @@
+/* Custom Swiper Styles for Shortform Carousel */
+
+.shortform-swiper {
+  padding: 20px 0;
+  background: white;
+}
+
+/* Navigation Buttons */
+.shortform-swiper .swiper-button-next,
+.shortform-swiper .swiper-button-prev {
+  color: #1f2937 !important;
+  background: rgba(255, 255, 255, 0.9);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shortform-swiper .swiper-button-next:hover,
+.shortform-swiper .swiper-button-prev:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.shortform-swiper .swiper-button-next::after,
+.shortform-swiper .swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1f2937 !important;
+}
+
+/* Pagination */
+.shortform-swiper .swiper-pagination {
+  bottom: 10px;
+}
+
+.shortform-swiper .swiper-pagination-bullet {
+  background: rgba(0, 0, 0, 0.3) !important;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.shortform-swiper .swiper-pagination-bullet-active {
+  background: #1f2937 !important;
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Override any default Swiper blue colors */
+.shortform-swiper .swiper-button-next,
+.shortform-swiper .swiper-button-prev {
+  --swiper-navigation-color: #1f2937 !important;
+}
+
+.shortform-swiper .swiper-pagination-bullet {
+  --swiper-pagination-color: #1f2937 !important;
+}
+
+/* Slide Transitions */
+.shortform-swiper .swiper-slide {
+  transition: all 0.5s ease;
+  opacity: 0.3;
+  filter: blur(2px) brightness(0.6);
+  transform: scale(0.8);
+}
+
+.shortform-swiper .swiper-slide-active {
+  opacity: 1;
+  filter: blur(0px) brightness(1);
+  transform: scale(1);
+}
+
+.shortform-swiper .swiper-slide-prev,
+.shortform-swiper .swiper-slide-next {
+  opacity: 0.5;
+  filter: blur(1px) brightness(0.7);
+  transform: scale(0.9);
+}
+
+/* Dark gradient overlay for side slides */
+.shortform-swiper .swiper-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.shortform-swiper .swiper-slide:not(.swiper-slide-active)::before {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .shortform-swiper .swiper-button-next,
+  .shortform-swiper .swiper-button-prev {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .shortform-swiper .swiper-button-next::after,
+  .shortform-swiper .swiper-button-prev::after {
+    font-size: 14px;
+  }
+  
+  .shortform-swiper .swiper-pagination {
+    bottom: 5px;
+  }
+  
+  /* Less dramatic effects on mobile */
+  .shortform-swiper .swiper-slide {
+    opacity: 0.6;
+    filter: blur(1px) brightness(0.8);
+    transform: scale(0.9);
+  }
+  
+  .shortform-swiper .swiper-slide-active {
+    opacity: 1;
+    filter: blur(0px) brightness(1);
+    transform: scale(1);
+  }
+} 
