@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
               alt="Paper" 
               className="w-full object-contain rotate-3"
             />
-            <h1 className="font-['InkFree'] text-xl absolute inset-0 flex items-center justify-center text-black opacity-70 rotate-2">We can all be a little more...</h1>
+            <h1 className="font-['InkFree'] text-xl absolute inset-0 flex items-center justify-center text-black opacity-67 rotate-4">We can all be a little more...</h1>
           </div>
           <img 
             src="/images/auto.png" 

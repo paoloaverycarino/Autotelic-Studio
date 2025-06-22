@@ -42,7 +42,16 @@ const ShortformPage: React.FC = () => {
     {/* Spacing div */}
     <div className="h-20"></div>
 
+        {/* Side by Side Videos */}
+        <ShortformCategory
+        title="Day X of Becoming a Video Editor"
+        videos={sideBySideVideos}
+        gridCols={5}
+        gap={8}
+      />
 
+    {/* Spacing div */}
+     <div className="h-25"></div>
 
       {/* Side by Side Videos */}
       <ShortformCategory
@@ -52,16 +61,6 @@ const ShortformPage: React.FC = () => {
         gap={8}
       />
 
-      {/* Spacing div */}
-      <div className="h-25"></div>
-
-        {/* Side by Side Videos */}
-        <ShortformCategory
-        title="Featured Short-form Videos"
-        videos={sideBySideVideos}
-        gridCols={5}
-        gap={8}
-      />
     </div>
   );
 };

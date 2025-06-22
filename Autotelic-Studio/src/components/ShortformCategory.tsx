@@ -53,7 +53,7 @@ const ShortformCategory: React.FC<ShortformCategoryProps> = ({
 
   return (
     <div className={`w-full ${marginBottomMap[marginBottom]} ${className}`}>
-      <h2 className="text-xl font-bold text-gray-800 text-center mb-4 font-NeueMontreal">
+      <h2 className="text-4xl font-bold text-gray-800 text-center mb-4 font-NeueMontreal">
         {title}
       </h2>
 
