@@ -1,7 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+// Declare Fillout global type
+declare global {
+  interface Window {
+    Fillout?: {
+      init: () => void;
+    };
+  }
+}
+
 const Navbar: React.FC = () => {
+  useEffect(() => {
+    // Load Fillout script once when component mounts
+    const script = document.createElement('script');
+    script.src = 'https://server.fillout.com/embed/v1/';
+    script.async = true;
+    
+    script.onload = () => {
+      // Initialize any existing Fillout elements
+      if (window.Fillout && typeof window.Fillout.init === 'function') {
+        window.Fillout.init();
+      }
+    };
+    
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script when component unmounts
+      const existingScript = document.querySelector('script[src="https://server.fillout.com/embed/v1/"]');
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
+    };
+  }, []);
+
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.open('https://forms.fillout.com/t/p1ruPbqJ1Wus', '_blank');
+  };
+
   return (
     <nav className="bg-black sticky top-0 w-full z-50">
       <div className="w-full px-12 sm:px-16 lg:px-24" style={{ paddingLeft: '3rem', paddingRight: '3rem' }}>
@@ -57,12 +95,15 @@ const Navbar: React.FC = () => {
                 About
               </Link>
               
-              <Link
-                to="/contact"
+              <button
+                onClick={handleContactClick}
                 className="font-NeueMontreal font-bold text-gray-300 hover:text-white px-6 py-3 rounded-md transition-colors duration-200"
+                aria-label="Contact"
               >
-                Contact
-              </Link>
+                <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </button>
             </div>
           </div>
 
