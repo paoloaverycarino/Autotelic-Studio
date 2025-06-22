@@ -19,7 +19,7 @@ interface ShortformCarouselProps {
 
 const ShortformCarousel: React.FC<ShortformCarouselProps> = ({ videos, className = '' }) => {
   return (
-    <div className={`w-full bg-white ${className}`}>
+    <div className={`w-full bg-white px-4 py-6 ${className}`}>
       <Swiper
         modules={[Pagination, Navigation]}
         spaceBetween={30}
@@ -41,11 +41,11 @@ const ShortformCarousel: React.FC<ShortformCarouselProps> = ({ videos, className
           },
           640: {
             slidesPerView: 2,     // On medium screens, show 2 slides
-            spaceBetween: 30,
+            spaceBetween: 25,
           },
           1024: {
             slidesPerView: 3,     // On large screens, show 3 slides
-            spaceBetween: 50,
+            spaceBetween: 35,
           },
         }}
         className="shortform-swiper"

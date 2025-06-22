@@ -25,6 +25,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'InkFree';
+  src: url('/fonts/Inkfree.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Reset default styles */
 * {
   margin: 0;

@@ -19,9 +19,9 @@ const ShortformCategory: React.FC<ShortformCategoryProps> = ({
   title,
   videos,
   className = '',
-  gridCols = 5,
-  gap = 8,
-  marginBottom = 32,
+  gridCols = 2,
+  gap = 2,
+  marginBottom = 8,
 }) => {
   // Proper mappings for Tailwind classes
   const gridColsMap = {
@@ -53,7 +53,7 @@ const ShortformCategory: React.FC<ShortformCategoryProps> = ({
 
   return (
     <div className={`w-full ${marginBottomMap[marginBottom]} ${className}`}>
-      <h2 className="text-3xl font-bold text-gray-800 text-center mb-16 font-NeueMontreal">
+      <h2 className="text-xl font-bold text-gray-800 text-center mb-4 font-NeueMontreal">
         {title}
       </h2>
 

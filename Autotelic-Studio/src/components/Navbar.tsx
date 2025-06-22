@@ -48,11 +48,15 @@ const Navbar: React.FC = () => {
           <div className="flex-shrink-0">
             <Link
               to="/"
-              className="text-white text-2xl font-bold tracking-wide px-4 py-2 rounded-md hover:bg-gray-800 transition"
+              className="px-4 py-2 rounded-md hover:bg-gray-800 transition"
               role="button"
               aria-label="Go to Home"
             >
-              Autotelic Studio
+              <img 
+                src="/images/logo.png" 
+                alt="Autotelic Studio Logo" 
+                className="h-25 w-auto"
+              />
             </Link>
           </div>
           
@@ -65,16 +69,16 @@ const Navbar: React.FC = () => {
                 >
                   Video
                 </button>
-                <div className="font-NeueMontreal font-bold absolute left-0 mt-2 w-40 bg-gray-800 rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-200 z-50">
+                <div className="font-NeueMontreal font-bold absolute left-0 mt-2 w-24 bg-black rounded-none shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-200 z-50">
                   <Link
                     to="/shortform"
-                    className="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-t-md"
+                    className="block px-4 py-2 text-white hover:bg-gray-800 rounded-t-md"
                   >
                     Short-form
                   </Link>
                   <Link
                     to="/longform"
-                    className="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-b-md"
+                    className="block px-4 py-2 text-white hover:bg-gray-800 rounded-b-md"
                   >
                     Long-form
                   </Link>

@@ -1,16 +1,30 @@
 import React from 'react';
-import Longform from '../components/Longform';
 
 const LongformPage: React.FC = () => {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-white pt-16">
-      <div className="w-full max-w-6xl mx-auto px-4">
-        <Longform 
-          videoSrc="/videos/athena.mov" 
-          title="Your Video Title Here"
-        />
-      </div>
-    </main>
+    <div className="w-full h-screen bg-white flex items-center justify-center">
+      
+    <div className="max-w-4xl text-center">
+      <iframe 
+        width="800" 
+        height="450" 
+        src="https://www.youtube.com/embed/YPUDYPx5fOo?si=Ozt4zXWVGtzb-g-o" 
+        title="YouTube video player" 
+        frameBorder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerPolicy="strict-origin-when-cross-origin" 
+        allowFullScreen
+        className="rounded-lg shadow-2xl"
+      ></iframe>
+
+      <br></br>
+      
+      <h1 className="text-black text-4xl font-bold font-NeueMontreal mt-10 text-center">
+        Start Here.
+      </h1>
+    </div>
+
+  </div>
   );
 };
 
